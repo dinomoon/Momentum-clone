@@ -7,34 +7,62 @@
     <link rel="stylesheet" href="style.css" />
     <title>Momentum Clone</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
     />
   </head>
   <body>
+    <div class="ask-name-wrap">
+      <h2>Hello, what's your name?</h2>
+      <form>
+        <input type="text" />
+      </form>
+    </div>
     <div class="apps">
-      <div class="top-row"></div>
+      <div class="top-row">
+        <div class="weather-wrap">
+          <span class="temp"></span>
+          <span class="region"></span>
+        </div>
+      </div>
       <div class="center-above"></div>
       <div class="center">
-        <span id="time">17:00:00</span>
+        <span id="time"></span>
         <h1>
-          <span id="greeting">Good Afternoon</span>
-          <span id="name">Moon</span>
+          <span id="greeting"></span>
+          <span id="name"></span>
         </h1>
       </div>
       <div class="center-below">
-        <h2 id="focus-question">What is your main focus for today?</h2>
-        <h2 id="focus">Make Momentum clone</h2>
+        <div class="ask-focus-wrap">
+          <h2 id="focus-question">What is your main focus for today?</h2>
+          <form class="focus-form">
+            <input type="text" />
+          </form>
+        </div>
+        <div class="today-focus-wrap">
+          <span class="today">TODAY</span>
+          <div class="today-focus-text">
+            <i id="check-box"></i>
+            <span></span>
+            <i></i>
+          </div>
+        </div>
       </div>
       <div class="bottom-row">
         <div class="quote">
-          <p id="content">Quote content</p>
-          <span id="author">Quote Author</span>
+          <p id="content"></p>
+          <span id="author"></span>
         </div>
       </div>
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="app.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/askName.js"></script>
+    <script src="./js//askFocus.js"></script>
+    <script src="./js/weather.js"></script>
   </body>
 </html>
