@@ -2,8 +2,9 @@ const askFocusWrap = document.querySelector('.ask-focus-wrap'),
   askFocusForm = askFocusWrap.querySelector('.focus-form'),
   askFocusInput = askFocusForm.querySelector('input'),
   todayFocusWrap = document.querySelector('.today-focus-wrap'),
-  todayFocusText = todayFocusWrap.querySelector('.today-focus-text span'),
-  checkbox = document.querySelector('#check-box');
+  todayFocusText = todayFocusWrap.querySelector('.today-focus-text .text'),
+  checkbox = todayFocusWrap.querySelector('#check-box'),
+  focusDelBtn = todayFocusWrap.querySelector('#focus-del-btn');
 
 let checked = false;
 
@@ -14,6 +15,9 @@ function handleFocus(e) {
   todayFocusText.innerHTML = focusValue;
   askFocusWrap.classList.add('hidden');
   todayFocusWrap.classList.remove('hidden');
+  localStorage.setItem('focus-check', false);
+  checked = false;
+  todayFocusText.style.textDecoration = 'none';
 }
 
 askFocusForm.addEventListener('submit', handleFocus);
@@ -23,6 +27,7 @@ todayFocusWrap.addEventListener('mouseover', function () {
   } else {
     checkbox.className = 'far fa-square';
   }
+  focusDelBtn.className = 'far fa-window-close';
 });
 todayFocusWrap.addEventListener('mouseleave', function () {
   if (checked) {
@@ -30,6 +35,7 @@ todayFocusWrap.addEventListener('mouseleave', function () {
   } else {
     checkbox.className = '';
   }
+  focusDelBtn.className = '';
 });
 checkbox.addEventListener('click', function () {
   if (checkbox.className === 'far fa-square') {
@@ -45,9 +51,16 @@ checkbox.addEventListener('click', function () {
   }
 });
 
+focusDelBtn.addEventListener('click', function () {
+  todayFocusWrap.classList.add('hidden');
+  askFocusWrap.classList.remove('hidden');
+  localStorage.setItem('focus', '');
+  askFocusInput.value = '';
+});
+
 function askFocus() {
   const currentFocus = localStorage.getItem('focus');
-  if (currentFocus === null) {
+  if (currentFocus == false || currentFocus === null) {
     todayFocusWrap.classList.add('hidden');
   } else {
     askFocusWrap.classList.add('hidden');

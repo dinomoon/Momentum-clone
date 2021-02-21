@@ -19,18 +19,20 @@ function addZero(n) {
 
 function setBg() {
   let hour = new Date().getHours();
+  let randomNum = Math.floor(Math.random() * 3) + 1;
 
   if (hour < 12) {
-    document.body.style.backgroundImage = 'url(images/morning.jpg)';
+    document.body.style.backgroundImage = `url(images/morning${randomNum}.jpg)`;
     greeting.textContent = 'Good morning, ';
   } else if (hour < 18) {
-    document.body.style.backgroundImage = 'url(images/afternoon.jpg)';
+    document.body.style.backgroundImage = `url(images/afternoon${randomNum}.jpg)`;
     greeting.textContent = 'Good afternoon, ';
   } else {
-    document.body.style.backgroundImage = 'url(images/night.jpg)';
+    document.body.style.backgroundImage = `url(images/evening${randomNum}.jpg)`;
     greeting.textContent = 'Good evening, ';
   }
 
+  document.body.style.backgroundPosition = 'center';
   document.body.style.backgroundSize = 'cover';
   document.body.style.color = '#fff';
 }

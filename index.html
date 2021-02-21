@@ -31,8 +31,21 @@
       <div class="center">
         <span id="time"></span>
         <h1>
-          <span id="greeting"></span>
-          <span id="name"></span>
+          <div class="side-col"></div>
+          <div>
+            <span id="greeting"></span>
+            <span id="name"></span>
+            <span
+              id="name-edit-input"
+              class="hidden"
+              role="textbox"
+              contenteditable
+            ></span>
+            <span class="dot">.</span>
+          </div>
+          <div class="side-col">
+            <i></i>
+          </div>
         </h1>
       </div>
       <div class="center-below">
@@ -45,9 +58,9 @@
         <div class="today-focus-wrap">
           <span class="today">TODAY</span>
           <div class="today-focus-text">
-            <i id="check-box"></i>
-            <span></span>
-            <i></i>
+            <div class="check-box-wrap"><i id="check-box"></i></div>
+            <span class="text"></span>
+            <div class="focus-del-wrap"><i id="focus-del-btn"></i></div>
           </div>
         </div>
       </div>
@@ -58,7 +71,6 @@
         </div>
       </div>
     </div>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/askName.js"></script>
