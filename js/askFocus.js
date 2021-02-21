@@ -21,6 +21,8 @@ function handleFocus(e) {
 }
 
 askFocusForm.addEventListener('submit', handleFocus);
+
+// focus block에 마우스 올렸을 때
 todayFocusWrap.addEventListener('mouseover', function () {
   if (checked) {
     checkbox.className = 'far fa-check-square';
@@ -29,6 +31,8 @@ todayFocusWrap.addEventListener('mouseover', function () {
   }
   focusDelBtn.className = 'fas fa-times';
 });
+
+// focus block에서 마우스가 나갔을 때
 todayFocusWrap.addEventListener('mouseleave', function () {
   if (checked) {
     checkbox.className = 'far fa-check-square';
@@ -37,6 +41,8 @@ todayFocusWrap.addEventListener('mouseleave', function () {
   }
   focusDelBtn.className = '';
 });
+
+// checkbox 클릭했을 때
 checkbox.addEventListener('click', function () {
   if (checkbox.className === 'far fa-square') {
     checkbox.className = 'far fa-check-square';
@@ -51,6 +57,7 @@ checkbox.addEventListener('click', function () {
   }
 });
 
+// del button 클릭했을 때
 focusDelBtn.addEventListener('click', function () {
   todayFocusWrap.classList.add('hidden');
   askFocusWrap.classList.remove('hidden');
@@ -58,6 +65,7 @@ focusDelBtn.addEventListener('click', function () {
   askFocusInput.value = '';
 });
 
+// focus 설정되어있는지 확인
 function askFocus() {
   const currentFocus = localStorage.getItem('focus');
   if (currentFocus == false || currentFocus === null) {
@@ -68,6 +76,7 @@ function askFocus() {
   }
 }
 
+// 체크되어있는지 확인
 function isChecked() {
   const currentCheckStatus = localStorage.getItem('focus-check');
   if (currentCheckStatus === null || currentCheckStatus === 'false') {

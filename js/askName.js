@@ -11,14 +11,17 @@ const apps = document.querySelector('.apps'),
 
 let isEditing = false;
 
+// greeting block에 마우스 올렸을 때
 greetingWrap.addEventListener('mouseover', function () {
   editIcon.className = 'far fa-edit';
 });
 
+// greeting block에서 마우스 떠났을 때
 greetingWrap.addEventListener('mouseleave', function () {
   editIcon.className = '';
 });
 
+// edit 버튼 클릭했을 때
 editIcon.addEventListener('click', function () {
   if (!isEditing) {
     nameEditInput.className = '';
@@ -34,6 +37,7 @@ editIcon.addEventListener('click', function () {
   }
 });
 
+// nameEditInput에서 Enter와 BackSpace를 눌렀을 때
 nameEditInput.addEventListener('keydown', function (e) {
   const keyCode = e.keyCode;
   if (keyCode == 8) {
