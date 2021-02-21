@@ -107,6 +107,7 @@ body {
 
 .center .side-col i {
   padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .center .side-col i:hover {
@@ -194,5 +195,12 @@ i {
 }
 
 #focus-del-btn {
-  margin-left: 1.6rem;
+  margin-left: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#focus-del-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }

@@ -27,7 +27,7 @@ todayFocusWrap.addEventListener('mouseover', function () {
   } else {
     checkbox.className = 'far fa-square';
   }
-  focusDelBtn.className = 'far fa-window-close';
+  focusDelBtn.className = 'fas fa-times';
 });
 todayFocusWrap.addEventListener('mouseleave', function () {
   if (checked) {
